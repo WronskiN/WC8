@@ -1,0 +1,96 @@
+.features {
+  grid-row: 3 / 4;
+  grid-column: 1 / 9;
+
+  // min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width: $bp-small) {
+    flex-direction: row;
+    margin-bottom: 3rem;
+  }
+
+  .project__circle {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .circle {
+    height: 70%;
+    width: 70%;
+
+    @media screen and (min-width: $bp-small) {
+      height: 60%;
+    }
+
+    &__bg,
+    &__line {
+    fill: white;
+    stroke-width: 2px;
+    stroke-miterlimit: 10;
+    position: relative;
+    }
+    &__bg {
+    stroke: gray;
+    opacity: .35;
+    }
+
+    &__line-1 {
+      stroke: red;
+      stroke-dasharray: 140;
+      stroke-dashoffset: -50;
+    }
+    &__line-2 {
+      stroke: rgb(84, 200, 204);
+      stroke-dasharray: 135;
+      stroke-dashoffset: 145;
+    }
+    &__line-3 {
+      stroke: #000;
+      stroke-dasharray: 235;
+      stroke-dashoffset: -45;
+    }
+    &__txt-1 {
+      font-size: 30px;
+      fill: red;
+      position: relative;
+    }
+    &__txt-1-v2 {
+      fill: rgb(84, 200, 204);
+    }
+    &__txt-1-v3 {
+      fill: black;
+    }
+    &__txt-2 {
+      font-size: 10px;
+      fill: red;
+      text-transform: uppercase;
+      position: relative;
+    }
+    &__txt-2-v2 {
+      fill: rgb(84, 200, 204);
+    }
+    &__txt-2-v3 {
+      fill: black;
+    }
+    &__paragraph {
+      width:30%;
+      text-align: center;
+
+      @media screen and (min-width: $bp-small) {
+        font-size: 1rem;
+        width: 40%;
+      }
+      @media screen and (min-width: $bp-large) {
+        font-size: 1.5rem;
+        width: 40%;
+      }
+    }
+  }
+
+}
