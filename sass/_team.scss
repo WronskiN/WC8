@@ -1,5 +1,340 @@
+//section team
 .team {
-  background-color: pink;
   grid-row: 4 / 5;
   grid-column: 1 / 9;
+  position: relative;
+  @media (min-width: $bp-large) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  //header img and title
+  &__header {
+    width: 100%;
+    height: 15vh;
+    background-image: url(../img-mobile/our-team/our-team-logo.jpg);
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-bottom: 2rem;
+
+    @media (min-width: 533px) {
+      height: 25vh;
+    }
+    @media (min-width: $bp-medium-2) {
+      height: 20vh;
+    }
+    @media (min-width: $bp-largest) {
+      height: 25vh;
+      margin-bottom: 4rem;
+    }
+
+    &--border {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      height: 85%;
+      border: 2px solid white;
+      @media (min-width: $bp-largest) {
+        width: 80%;
+      }
+    }
+    &--title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      font-family: sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      
+      span {
+        font-size: 1rem;
+        position: relative;
+
+        @media (min-width: $bp-medium-2) {
+          font-size: 1.5rem;
+        }
+        @media (min-width: $bp-large) {
+          font-size: 2rem;
+        }
+        
+        &::before,
+        &::after {
+        content: "";
+        display: inline-block;
+        background-color: #fff;
+        width: 3rem;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+
+        @media (min-width: $bp-medium-2) {
+          width: 5rem;
+        }
+        @media (min-width: $bp-large) {
+          width: 7rem;
+        }
+        }
+        &::before {
+          right: 120%;
+        }
+        &::after {
+          left: 120%;
+        }
+      }
+
+      h2 {
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 300;
+
+        @media (min-width: $bp-medium-2) {
+          font-size: 2.5rem;
+        }
+        @media (min-width: $bp-large) {
+          font-size: 3.5rem;
+        }
+      }
+
+    }
+  }
+  //team member details and pictures
+  &__box {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    @media (min-width: $bp-large) {
+      width: 80vw;
+    }
+    @media (min-width: $bp-largest) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      height: 40vh;
+      margin-bottom: 0;
+
+      &:nth-of-type(even) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &__top {
+      flex-basis: 50%;
+      width: 90%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+      
+      @media (min-width: $bp-largest) {
+        width: 50%;
+      }
+      &--name {
+        text-transform: uppercase;
+        font-size: 2.5rem;
+        font-weight: 400;
+        margin-top: 2rem;
+        @media (min-width: $bp-medium-2) {
+          font-size: 3rem;
+        }
+      }
+      &--title {
+        margin-bottom: 2rem;
+        position: relative;
+        @media (min-width: $bp-medium-2) {
+          font-size: 1.5rem;
+        }
+        &::after{
+          content: "";
+          display: block;
+          background-color: red;
+          width: 15rem;
+          height: 3px;
+          margin-top: 1rem;
+          position: absolute;
+          left: 50%;
+          transform: translate(-50%);
+          @media (min-width: $bp-medium-2) {
+            width: 20rem;
+          }
+        } 
+      }
+
+      &--about {
+        text-align: center;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        @media (min-width: $bp-medium-2) {
+          font-size: 2rem;
+        }
+      }
+    }
+    &__top--left,
+    &__top--right {
+      @media (min-width: 320px) and (max-width: 1199px) {
+        &::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          border: 2px solid black;
+          border-bottom: none;
+          position: absolute;
+        }
+      }
+    }
+    &__top--left {
+      @media (min-width: $bp-largest) {
+        &::before {
+          content: "";
+          width: 100%;
+          height: 90%;
+          border: 3px solid black;
+          border-right: none;
+          position: absolute;
+          left: 2rem;
+        }
+      }
+    }
+    &__top--right {
+      @media (min-width: $bp-largest) {
+        &::before {
+          content: "";
+          width: 100%;
+          height: 90%;
+          border: 3px solid black;
+          border-left: none;
+          position: absolute;
+          right: 2rem;
+        }
+      }
+    }
+
+    &__bottom {
+      flex-basis: 50%;
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      @media (min-width: $bp-largest) {
+        z-index: 11;
+        width: 50%;
+      }
+      &--img {
+        width: 100%;
+        height: 100%;
+        background-image: url(../img/our-team/adrianna.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        
+        .squareEven,
+        .square {
+          width: 4rem;
+          height: 4rem;
+          background-color: #fff;
+          position: absolute;
+          top: -10%;
+          left: 50%;
+          transform: rotate(45deg) translate(-50%);
+
+          @media (min-width: $bp-medium-2) {
+            width: 5rem;
+            height: 5rem;
+            top: -5%;
+          }
+          @media (min-width: $bp-large) {
+            width: 6rem;
+            height: 6rem;
+            top: -5%;
+          }
+        }
+        .square {
+          @media (min-width: $bp-largest) {
+            top: 50%;
+            left: -1%;
+            transform: rotate(45deg) translate(-50%);
+          }
+        }
+        .squareEven {
+          @media (min-width: $bp-largest) {
+            top: 50%;
+            left: 99%;
+            transform: rotate(45deg) translate(-50%);
+          }
+        }
+        
+      }
+      .olivia{background-image: url(../img/our-team/olivia.jpg);}
+      .thomas{background-image: url(../img/our-team/thomas.jpg);}
+      .taylor{background-image: url(../img/our-team/taylor.jpg);}
+      
+      &--left,
+      &--right {
+        @media (min-width: 320px) and (max-width: 1199px) {
+          &::before {
+            content: "";
+            width: 90%;
+            height: 90%;
+            border: 2px solid white;
+            border-top: none;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 8;
+          }
+        }
+      }
+      &--left {
+        @media (min-width: $bp-largest) {
+          &::before {
+            content: "";
+            width: 97%;
+            height: 90%;
+            border: 3px solid white;
+            border-left: none;
+            position: absolute;
+            top: 50%;
+            left: 2rem;
+            transform: translate(-2rem, -50%);
+            z-index: 1;
+          }
+        }
+      }
+      &--right {
+        @media (min-width: $bp-largest) {
+          &::before {
+            content: "";
+            width: 97%;
+            height: 90%;
+            border: 3px solid white;
+            border-right: none;
+            position: absolute;
+            top: 50%;
+            right: 2rem;
+            transform: translate(2rem, -50%);
+            z-index: 8;
+          }
+        }
+      }
+    }
+    
+
+  }
+
+  
 }

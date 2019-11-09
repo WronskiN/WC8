@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem;
   @media screen and (min-width: $bp-small) {
     flex-direction: row;
     margin-bottom: 3rem;
@@ -18,13 +19,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (min-width: $bp-large) {
+      flex-basis: 22%;
+      margin: 3rem 2rem 3rem 2rem;
+    }
   }
+
   
   .circle {
     height: 70%;
     width: 70%;
 
-    @media screen and (min-width: $bp-small) {
+    @media (min-width: $bp-small) {
       height: 60%;
     }
 
