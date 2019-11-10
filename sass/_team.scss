@@ -266,7 +266,7 @@
         .square {
           @media (min-width: $bp-largest) {
             top: 50%;
-            left: -1%;
+            left: -2%;
             transform: rotate(45deg) translate(-50%);
           }
         }
