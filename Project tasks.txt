@@ -1,0 +1,5 @@
+
+1. PSD to HTML
+2. html/css/js
+3. rwd - must have
+4. usefull: circle progress bar js
